@@ -8,7 +8,3 @@ scope = "leanprover-community"
 
 [[lean_lib]]
 name = "three_qubits"
-
-[[lean_exe]]
-name = "three_qubits"
-root = "Main"
