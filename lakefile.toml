@@ -1,0 +1,14 @@
+name = "three_qubits"
+version = "0.1.0"
+defaultTargets = ["three_qubits"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+
+[[lean_lib]]
+name = "three_qubits"
+
+[[lean_exe]]
+name = "three_qubits"
+root = "Main"
