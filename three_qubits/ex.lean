@@ -8,11 +8,6 @@ import Mathlib.LinearAlgebra.TensorProduct.Submodule
 import Mathlib.LinearAlgebra.TensorProduct.Subalgebra
 import Mathlib.Algebra.Module.Submodule.Basic
 import Mathlib.Algebra.Module.Submodule.Bilinear
-import StudyProject.StandardLinearAlgebra.definitions
-import StudyProject.StandardLinearAlgebra.moduleFinite
-import StudyProject.StandardLinearAlgebra.moduleInfinite
-import StudyProject.StandardLinearAlgebra.linearMaps
-import StudyProject.StandardLinearAlgebra.basis
 
 set_option maxHeartbeats 10000000
 
@@ -598,8 +593,16 @@ def transTwo(cf2: CF2)(p1 p2:ℕ)(neq: ¬(p1=p2)):CF :=
       intro e3 e4
       intro a b c d
       simp [e3, e4]
-      sorry
-      all_goals sorry
+      simp [cf2.ps1, cf2.ps2]
+      have eq1:(repl a (b + c) d 2 p2 (by aesop)) (cf2.func b 0) =
+               (repl a b d 2 p2 (by aesop)) (cf2.func b 0):= by
+        apply distr2 (cf2.func b 0)
+        simp [repl, repl2, repl1]
+      have eq2:(repl a (b + c) d 2 p2 (by aesop)) (cf2.func c 0) =
+               (repl a c d 2 p2 (by aesop)) (cf2.func c 0):= by
+        apply distr2 (cf2.func c 0)
+        simp [repl, repl2, repl1]
+      simp [eq1, eq2]
     }
     all_goals sorry
   ps3:= by sorry
