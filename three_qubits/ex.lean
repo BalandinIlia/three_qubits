@@ -480,6 +480,7 @@ def transTwo(cf2: CF2)(p1 p2:ℕ)(neq: ¬(p1=p2)):CF :=
       {
         simp [cf2.ps1, cf2.ps2]
         simp [repl, repl2]
+        sorry
       }
       {
         simp [repl, repl2]
@@ -612,7 +613,7 @@ def transTwo(cf2: CF2)(p1 p2:ℕ)(neq: ¬(p1=p2)):CF :=
 }
 
 noncomputable
-def swa(p1 p2:ℕ)(neq: ¬(p1=p2)):=transTwo (swappp p1 p2) p1 p2 neq
+def swa(p1 p2:ℕ)(neq: ¬(p1=p2)):=transTwo swappp p1 p2 neq
 
 -- Here we start transforming core into linear map to linear map...
 -- This is the first step: we eliminate the first parameter of core
